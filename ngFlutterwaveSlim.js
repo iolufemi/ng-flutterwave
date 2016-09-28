@@ -245,7 +245,14 @@ angular.module('ng-flutterwave',[])
       elem.find('.overlay').hide();
       FlutterwaveSettings.set('apiKey',attrs.apiKey);
       FlutterwaveSettings.set('merchantKey',attrs.merchantKey);
-      FlutterwaveSettings.set('url',attrs.url);
+      if(attrs.url){
+        FlutterwaveSettings.set('url',attrs.url);
+      }else if(attrs.env !== 'production'){
+        FlutterwaveSettings.set('url','https://flutterwaveapi.herokuapp.com');
+      }else{
+        FlutterwaveSettings.set('url','https://paybutton.prod1flutterwave.co');
+      }
+
       scope.logo = attrs.logo;
       scope.title = attrs.title;
       scope.description = attrs.description;
@@ -273,6 +280,7 @@ angular.module('ng-flutterwave',[])
       elem.removeAttr('logo');
       elem.removeAttr('label');
       elem.removeAttr('class');
+      elem.removeAttr('env');
       scope.validatetext = (scope.authmodel === 'RANDOM_DEBIT') ? 'RANDOM DEBIT AMOUNT' : 'OTP';
       if(scope.authmodel === 'BVN'){
         elem.find('#bvn').show();
@@ -502,8 +510,8 @@ if(typeof $ !== 'undefined'){
       }
 
     });
-    });
+  });
 
-  }else{
+}else{
   console.warn('Could not detect jquery. Please include Jquery'); // jshint ignore:line 
 }
