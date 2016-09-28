@@ -1,0 +1,30 @@
+{
+  "name": "ng-flutterwave",
+  "homepage": "https://github.com/Flutterwave/ng-flutterwave",
+  "authors": [
+    "iolufemi <iolufemi@ymail.com>"
+  ],
+  "description": "AngularJS factory for flutterwave",
+  "main": "ngFlutterwave.js",
+  "keywords": [
+    "Payment",
+    "Gateway",
+    "Accept",
+    "Payment",
+    "Flutterwave"
+  ],
+  "license": "GPL-3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "aes-js": "^2.0.0",
+    "js-base64": "^2.1.9",
+    "jquery": "^3.1.0"
+  }
+}
