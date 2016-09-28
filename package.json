@@ -1,0 +1,37 @@
+{
+  "name": "ng-flutterwave",
+  "version": "0.1.0",
+  "description": "Angular factory for flutterwave",
+  "main": "ngFlutterwave.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flutterwave/ng-flutterwave.git"
+  },
+  "keywords": [
+    "Payment",
+    "Gateway",
+    "Flutterwave"
+  ],
+  "author": "Olufemi Olanipekun <iolufemi@ymail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Flutterwave/ng-flutterwave/issues"
+  },
+  "homepage": "https://github.com/Flutterwave/ng-flutterwave#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "exports-loader": "^0.6.3",
+    "gulp-jshint": "^2.0.1",
+    "gulp-minify": "0.0.14",
+    "gulp-webpack": "^1.5.0",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "style-loader": "^0.13.1"
+  }
+}
