@@ -351,7 +351,7 @@ angular.module('ng-flutterwave',[])
       $log.debug('The response',resp);
       resp.data.data.status = resp.data.status;
       $scope.disableCharge = false;
-      if(resp.data.data.requiresValidation){
+      if(resp.data.data.requiresValidation && resp.data.data.responsehtml === null){
         angular.element('.togo').hide();
         angular.element('#validate').show();
         angular.element('#otp').show();
@@ -360,6 +360,9 @@ angular.module('ng-flutterwave',[])
         // success! hide modal and redirect to success page
         angular.element('.overlay').hide();
         angular.forEach(resp.data.data, function(value, key) {
+          if(key === 'responsehtml' && (value !== null && value !== 'null')){
+            value = Base64.encode(value);
+          }
           angular.element('flutterwave #flutterwaveCheckout').append('<input type="hidden" name="'+key+'" value="'+value+'" />');
         });
         angular.element('flutterwave #flutterwaveCheckout').submit();
